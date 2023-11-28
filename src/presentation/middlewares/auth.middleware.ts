@@ -10,7 +10,6 @@ export class AuthMiddleware {
   ) => {
     const authorization = req.header('Authorization');
     if (!authorization) return res.status(401).json({ error: 'Unauthorized' });
-    console.log(authorization);
     if (!authorization.startsWith('Bearer '))
       return res.status(401).json({ error: 'Invalid Bearer token' });
 
